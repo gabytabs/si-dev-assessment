@@ -1,28 +1,6 @@
 <!--<h1>Pages#home</h1>-->
 <!--<p>Find me in app/views/pages/home.html.erb</p>-->
 
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">SMS App</a>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Username / Log in</a></li>
-                <li><a href="#">Create Account / Log out</a></li>
-                <li><a href="#">Send A Message</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="container-fluid">
     <div class="jumbotron">
         <h1>Welcome!</h1>
@@ -37,10 +15,16 @@
     </div>
 </div>
 
-
-<%= form_tag("/sms/send", method: "post") do %>
-    <%= telephone_field(:number, "Telephone") %>
-    <%= text_area_tag(:message, "Hey!", size: "24x6") %>
-    <%= submit_tag %>
-<% end %>
-
+<div class="container form-msg" id="form-msg">
+    <%= form_tag("/sms/send", method: "post") do %>
+        <div class="form-group">
+            <%= label_tag(:number, "Number: ") %>
+            <%= number_field(:number, "Phone number", class: "form_control") %>
+        </div>
+        <div class="form-group">
+            <%= label_tag(:message, "What's your message:") %>
+            <%= text_area_tag(:message, "Hi! ", class: "form-control", rows: "5" ) %>
+        </div>
+        <%= submit_tag("Send", class: "btn btn-success") %>
+    <% end %>
+</div>
