@@ -53,3 +53,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ruby "2.3.0"
+
+#My Gem
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'

@@ -1,6 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--<h1>Pages#home</h1>-->
+<!--<p>Find me in app/views/pages/home.html.erb</p>-->
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SMS App</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Username / Log in</a></li>
+                <li><a href="#">Create Account / Log out</a></li>
+                <li><a href="#">Send A Message</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus massa non 
+        quam tempor tincidunt. Aliquam eget ipsum vitae nunc sodales viverra. Donec iaculis imperdiet mauris, 
+        et pellentesque eros iaculis non. Integer scelerisque mollis rhoncus. Aliquam varius vel lectus eu placerat. 
+        Aliquam faucibus purus vitae neque posuere, non feugiat velit aliquam. Nunc finibus metus a erat sollicitudin, 
+        ut iaculis risus pellentesque. Donec facilisis pretium nisi ac porttitor. Duis sed ex non dui imperdiet 
+        pulvinar vitae vel nibh. Integer odio nisl,
+        rhoncus eget dictum vel, viverra non purus. Fusce non volutpat augue. Suspendisse nec arcu nisi</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+</div>
+
 
 <%= form_tag("/sms/send", method: "post") do %>
-<!-- add form elements here -->
+    <%= telephone_field(:number, "Telephone") %>
+    <%= text_area_tag(:message, "Hey!", size: "24x6") %>
+    <%= submit_tag %>
 <% end %>
+
