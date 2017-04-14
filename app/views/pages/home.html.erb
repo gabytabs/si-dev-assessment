@@ -19,7 +19,7 @@
     <%= form_tag("/sms/send", method: "post") do %>
         <div class="form-group">
             <%= label_tag(:number, "Number: ") %>
-            <%= number_field(:number, "Phone number", class: "form_control") %>
+            <%= text_field_tag(:number) %>
         </div>
         <div class="form-group">
             <%= label_tag(:message, "What's your message:") %>

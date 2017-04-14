@@ -1,2 +1,18 @@
-<h1>Pages#sms</h1>
-<p>Find me in app/views/pages/sms.html.erb</p>
+<!--<h1>Pages#sms</h1>-->
+<!--<p>Find me in app/views/pages/sms.html.erb</p>-->
+
+<div class="container">
+    <h2> You have successfully send your text message! </h2>
+    
+    <div class="card">
+        <div class="message-container">
+            <p><%= @message %></p>
+        </div>
+        
+        <div class="number-container">
+            <p>-<%= @number %></p>
+        </div>
+    </div>
+    
+    <%= link_to "Go Back",  root_path, class:"btn btn-default pull-right" %>
+</div>
