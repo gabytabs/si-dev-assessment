@@ -1,28 +1,35 @@
 <!--<h1>Pages#home</h1>-->
 <!--<p>Find me in app/views/pages/home.html.erb</p>-->
 
-<div class="container-fluid">
-    <div class="jumbotron">
-        <h1>Welcome!</h1>
-        <p> This is my Startup Institute Dev Assessment.</p>
-        <p> The objective is to create a web app that will send a standard text message to 
-        a validated phone number using Twilio API. </p>
-        <p>The only validated phone number in my Twilio free trial is "7189251074".</p>
-        <p>Feel free to test it. </p>
-        <p><a class="btn btn-primary btn-lg" href="#form-msg" role="button">Send a Message</a></p>
+<div class="container-fluid welcome-msg">
+    <div class="jumbotron jumbotron-custom">
+        <h1 class="header-h">Welcome | welcome,</h1>
+        
+        <div class="divider"></div>
+        
+        <div class="parag">
+            <p class="parag-title"> This is my Startup Institute Dev Assessment.</p>
+            <p class="parag-obj"> To create a web app that will send a standard text message to 
+            a validated phone number using Twilio API. </p>
+            <p>The only validated phone number in my Twilio is <span>"7189251074"</span>.</p>
+            <p class="parag-last">Feel free to test it out. </p>
+            <!--<p><a class="btn btn-primary btn-lg" href="#form-msg" role="button">Send a Message</a></p>-->
+        </div>
     </div>
 </div>
 
-<div class="container form-msg" id="form-msg">
-    <%= form_tag("/sms/send", method: "post") do %>
-        <div class="form-group">
-            <%= label_tag(:number, "Number: ") %>
-            <%= text_field_tag(:number) %>
-        </div>
-        <div class="form-group">
-            <%= label_tag(:message, "What's your message:") %>
-            <%= text_area_tag(:message, "Hi! ", class: "form-control", rows: "5" ) %>
-        </div>
-        <%= submit_tag("Send", class: "btn btn-success") %>
-    <% end %>
+<div class="container">
+    <div class="form-container" id="form-msg">
+        <%= form_tag("/sms/send", method: "post", class: "form-msg") do %>
+            <div class="form-group">
+                <%= label_tag(:number, "Phone Number: ") %>
+                <%= text_field_tag(:number, "" ,class: "form-control number-input") %>
+            </div>
+            <div class="form-group">
+                <%= label_tag(:message, "What's your message:") %>
+                <%= text_area_tag(:message, "", class: "form-control message-input", rows: "5" ) %>
+            </div>
+            <%= submit_tag("Send", class: "btn btn-success btn-block btn-custom") %>
+        <% end %>
+    </div>
 </div>
