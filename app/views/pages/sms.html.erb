@@ -6,13 +6,16 @@
     
     <div class="card">
         <div class="message-container">
-            <p><%= @message %></p>
+            <p>" <%= @message %> "</p>
         </div>
         
+        <div class="divider-sms"></div>
+        
         <div class="number-container">
-            <p>-<%= @number %></p>
+            <p><%= @number %></p>
         </div>
+        
+        <%= link_to "Go Back",  root_path, class:"btn btn-default btn-sms btn-block" %>
     </div>
     
-    <%= link_to "Go Back",  root_path, class:"btn btn-default pull-right" %>
 </div>
