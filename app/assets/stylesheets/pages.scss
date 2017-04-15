@@ -23,3 +23,25 @@
         text-align: right;
     }
 }
+
+.navbar-custom{
+    padding: 30px;
+    background-color: #FF9200 !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+    
+    .navbar-brand{
+        font-size: 30px;
+        color: white !important;
+    }
+    
+    li > a {
+    color: antiquewhite !important;
+    transition: all 0.5s ease-in-out;
+    
+        &:hover { 
+            color: white !important; 
+        }
+    }
+    
+}
